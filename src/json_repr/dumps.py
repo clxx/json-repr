@@ -1,7 +1,7 @@
 import json
 
 
-def _pformat(obj, indentation_level):
+def _dumps(obj, indentation_level):
     indentation_count = 4
     formatted_result = ""
     if isinstance(obj, dict):
@@ -13,7 +13,7 @@ def _pformat(obj, indentation_level):
             }{
             json.dumps(key, ensure_ascii=False)
             }: {
-            _pformat(value, indentation_level + 1)
+            _dumps(value, indentation_level + 1)
             }{
             "," if index < count else ""
             }\n"""
@@ -27,7 +27,7 @@ def _pformat(obj, indentation_level):
             formatted_result += f"""{
             " " * ((indentation_level + 1) * indentation_count)
             }{
-            _pformat(value, indentation_level + 1)
+            _dumps(value, indentation_level + 1)
             }{
             "," if index < count else ""
             }\n"""
@@ -41,5 +41,5 @@ def _pformat(obj, indentation_level):
     return formatted_result
 
 
-def pformat(obj):
-    return _pformat(obj, 0)
+def dumps(obj):
+    return _dumps(obj, 0)
