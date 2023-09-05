@@ -7,6 +7,7 @@ Pretty print JSON like data structures with a "repr(...)" fallback, e.g. for Mon
 ```python
 import json_repr
 
+# JSON: Legacy Mongo Shell Format
 original_source = """{
     "_id" : ObjectId("507f1f77bcf86cd799439011"),
     "persons": [
