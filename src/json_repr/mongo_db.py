@@ -19,12 +19,5 @@ class NumberInt(MongoDbType):
     pass
 
 
-def mongo_db_globals():
-    global null
-    null = None
-
-    global true
-    true = True
-
-    global false
-    false = False
+def eval_mongo_db_json(source):
+    return eval(source, {"null": None, "true": True, "false": False})
