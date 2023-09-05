@@ -1,0 +1,6 @@
+https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
+py -m twine upload --repository pypi dist/*
+
+username: __token__
+password: [token]
