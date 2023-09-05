@@ -45,6 +45,8 @@ Currently supported (legacy) mongo shell types:
 * NumberLong
 * NumberDecimal
 
+and
+
 * null
 * true
 * false
