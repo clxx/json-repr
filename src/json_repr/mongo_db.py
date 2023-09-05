@@ -1,24 +1,25 @@
 import json
 
 
-def mongo_db_types():
-    class MongoDbType:
-        def __init__(self, value):
-            self.value = value
+class MongoDbType:
+    def __init__(self, value):
+        self.value = value
 
-        def __repr__(self):
-            return f"{self.__class__.__name__}({json.dumps(self.value, ensure_ascii=False)})"
+    def __repr__(self):
+        return (
+            f"{self.__class__.__name__}({json.dumps(self.value, ensure_ascii=False)})"
+        )
 
-    global ObjectId
 
-    class ObjectId(MongoDbType):
-        pass
+class ObjectId(MongoDbType):
+    pass
 
-    global NumberInt
 
-    class NumberInt(MongoDbType):
-        pass
+class NumberInt(MongoDbType):
+    pass
 
+
+def mongo_db_globals():
     global null
     null = None
 
