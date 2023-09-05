@@ -20,4 +20,13 @@ class NumberInt(MongoDbType):
 
 
 def eval_mongo_db_json(source):
-    return eval(source, {"null": None, "true": True, "false": False})
+    return eval(
+        source,
+        {
+            ObjectId.__name__: ObjectId,
+            NumberInt.__name__: NumberInt,
+            "null": None,
+            "true": True,
+            "false": False,
+        },
+    )
