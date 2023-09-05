@@ -22,11 +22,11 @@ original_source = """{
     ]
 }"""
 
-persons = json_repr.eval_mongo_db_json(original_source)
+document = json_repr.eval_mongo_db_json(original_source)
 
-print(persons)
+print(document.persons[0])
 
-dumped_source = json_repr.dumps(persons)
+dumped_source = json_repr.dumps(document)
 print(dumped_source)
 
 print(dumped_source == original_source)
