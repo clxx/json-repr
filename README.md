@@ -9,7 +9,7 @@ import json_repr
 
 # JSON: Legacy Mongo Shell Format
 original_source = """{
-    "_id" : ObjectId("507f1f77bcf86cd799439011"),
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
     "persons": [
         {
             "name": "Alice",
@@ -24,7 +24,7 @@ original_source = """{
 
 document = json_repr.eval_mongo_db_json(original_source)
 
-print(document.persons[0])
+print(document['persons'][0])
 
 dumped_source = json_repr.dumps(document)
 print(dumped_source)
