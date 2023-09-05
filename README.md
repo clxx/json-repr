@@ -31,3 +31,12 @@ print(dumped_source)
 
 print(dumped_source == original_source)
 ```
+
+## MongoDB
+
+Currently supported (legacy) mongo shell types:
+
+* ObjectId
+* NumberInt
+* NumberLong
+* NumberDecimal
