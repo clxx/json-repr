@@ -1,1 +1,1 @@
-from . import dumps
+from .dumps import dumps
