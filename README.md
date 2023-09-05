@@ -24,7 +24,7 @@ original_source = """{
 
 document = json_repr.eval_mongo_db_json(original_source)
 
-print(document['persons'][0])
+print(document["persons"][0])
 
 dumped_source = json_repr.dumps(document)
 print(dumped_source)
