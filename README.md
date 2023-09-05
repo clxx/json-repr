@@ -10,21 +10,25 @@ import json_repr
 # JSON: Legacy Mongo Shell Format
 original_source = """{
     "_id": ObjectId("507f1f77bcf86cd799439011"),
-    "persons": [
+    "employees": [
         {
-            "name": "Alice",
-            "id": NumberInt(1)
+            "firstName": "Alice",
+            "middleName": null,
+            "id": NumberInt(1),
+            "active": true
         },
         {
-            "name": "Bob",
-            "id": NumberInt(2)
+            "firstName": "Bob",
+            "middleName": null,
+            "id": NumberInt(2),
+            "active": false
         }
     ]
 }"""
 
 document = json_repr.eval_mongo_db_json(original_source)
 
-print(document["persons"][0])
+print(document["employees"][0])
 
 dumped_source = json_repr.dumps(document)
 print(dumped_source)
@@ -40,3 +44,7 @@ Currently supported (legacy) mongo shell types:
 * NumberInt
 * NumberLong
 * NumberDecimal
+
+* null
+* true
+* false
